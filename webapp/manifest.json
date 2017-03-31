@@ -9,7 +9,16 @@
 	"description": "{{appDescription}}",
 	"applicationVersion": {
 	  "version": "1.0.0"
-	}
+	},
+	"dataSources": {
+		"mainService": {
+			"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+			"type": "OData",
+			"settings": {
+				"odataVersion": "2.0"
+					}
+			}
+		}
   },
   "sap.ui": {
 	"_version": "1.1.0",
@@ -40,8 +49,7 @@
 		}
 	  },
 	  "invoice": {
-		"type": "sap.ui.model.json.JSONModel",
-		"uri": "Invoices.json"
+		"dataSource": "mainService"
 	  }
 	},
 	"resources": {
